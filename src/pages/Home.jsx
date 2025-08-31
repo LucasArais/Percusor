@@ -10,8 +10,41 @@ import {
   Settings,
   Award
 } from 'lucide-react';
+import ImageBanner from '../components/ImageBanner';
+import SimpleLogoLoop from '../components/SimpleLogoLoop';
 
 const Home = () => {
+  const bannerImages = [
+    {
+      src: '/slide1.jpeg',
+      alt: 'Instalação de Ar Condicionado',
+      title: 'Instalação Profissional',
+      caption: 'Serviços de instalação com garantia e qualidade'
+    },
+    {
+      src: '/slide2.jpg', 
+      alt: 'Manutenção de Equipamentos',
+      title: 'Manutenção Especializada',
+      caption: 'Manutenção preventiva e corretiva para todos os tipos'
+    },
+    {
+      src: '/slide3.jpg',
+      alt: 'Projetos Personalizados',
+      title: 'Projetos Sob Medida',
+      caption: 'Soluções personalizadas para cada necessidade'
+    }
+  ];
+
+  const clientLogos = [
+    { src: "/logo-rocontec.webp", alt: "Rocontec", title: "Rocontec" },
+    { src: "/logo-andari.png", alt: "Andari", title: "Andari" },
+    { src: "/logo-bmg.png", alt: "BMG", title: "BMG" },
+    { src: "/logo-chevrolet.png", alt: "Chevrolet", title: "Chevrolet" },
+    { src: "/logo-ford.png", alt: "Ford", title: "Ford" },
+    { src: "/logo-ioa.webp", alt: "IOA", title: "IOA" },
+    { src: "/logo-panobianco.webp", alt: "Panobianco", title: "Panobianco" },
+  ];
+
   const equipmentTypes = [
     {
       name: 'Split',
@@ -70,40 +103,31 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white pt-20">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <Snowflake className="w-16 h-16 text-blue-200" />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              PROFISSIONAIS
-              <br />
-              <span className="text-blue-200">QUALIFICADOS</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              No inverno ou no verão, trabalhamos para você se sentir bem.
+      {/* Image Banner */}
+      <ImageBanner 
+        images={bannerImages}
+        autoPlay={true}
+        interval={5000}
+      />
+
+      {/* Client Logos Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nossos Clientes
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Empresas que confiam na Percusor para suas soluções de climatização
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contato"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
-              >
-                Nossos Serviços
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              <Link
-                to="/sobre"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"
-              >
-                Solicitar Orçamento
-              </Link>
-            </div>
           </div>
+          <SimpleLogoLoop
+            logos={clientLogos}
+            speed={60}
+          />
         </div>
       </section>
+
 
       {/* Equipment Types Section */}
       <section className="py-20 bg-gray-50">
@@ -158,35 +182,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Por que escolher a Percusor?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Somos especialistas em climatização com anos de experiência no mercado.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">

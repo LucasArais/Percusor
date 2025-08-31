@@ -27,7 +27,7 @@ function AppContent() {
     <div className="App">
       <div className="header-wrapper">
         <div className="logo-container-main">
-          <img src="/logo-percusor.png" alt="Percusor Climatização" className="main-logo" />
+          <img src="/logo-percursor.png" alt="Percusor Climatização" className="main-logo" />
         </div>
         <PillNav
           items={navigationItems}
