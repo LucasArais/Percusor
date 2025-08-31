@@ -32,13 +32,13 @@ function AppContent() {
         <PillNav
           items={navigationItems}
           activeHref={location.pathname}
-          baseColor="#2563eb"
-          pillColor="#ffffff"
-          hoveredPillTextColor="#ffffff"
-          pillTextColor="#2563eb"
+          baseColor="transparent"
+          pillColor="transparent"
+          hoveredPillTextColor="#87CEEB"
+          pillTextColor="#000000"
         />
       </div>
-      <main style={{ paddingTop: '120px' }}>
+      <main style={{ paddingTop: '80px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/manutencao" element={<Manutencao />} />
