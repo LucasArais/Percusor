@@ -133,13 +133,13 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="pb-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Atendemos Todos os Segmentos
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-8">
               Soluções personalizadas para cada tipo de ambiente
             </p>
           </div>
@@ -190,6 +190,28 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nosso Endereço
+            </h2>
+            <p className="mb-8"></p>
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-xl">
+            <iframe
+              src="https://maps.google.com/maps?q=Rua%20Cristovao%20Pereira%201021%20Campo%20Belo%20Sao%20Paulo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

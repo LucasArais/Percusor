@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import PillNav from './components/PillNav';
-import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Manutencao from './pages/Manutencao';
@@ -49,8 +48,7 @@ function AppContent() {
           <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>
-      <Footer />
-      <WhatsAppButton />
+            <WhatsAppButton />
     </div>
   );
 }
