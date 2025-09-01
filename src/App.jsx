@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import PillNav from './components/PillNav';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Manutencao from './pages/Manutencao';
 import Projetos from './pages/Projetos';
@@ -19,8 +20,7 @@ function AppContent() {
     { label: 'Projetos', href: '/projetos' },
     { label: 'PMOC', href: '/pmoc' },
     { label: 'Quem Somos', href: '/sobre' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contato', href: '/contato' }
+    { label: 'Blog', href: '/blog' }
   ];
 
   return (
@@ -38,7 +38,7 @@ function AppContent() {
           pillTextColor="#000000"
         />
       </div>
-      <main style={{ paddingTop: '80px' }}>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/manutencao" element={<Manutencao />} />
@@ -50,6 +50,7 @@ function AppContent() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -8,7 +8,11 @@ import {
   Star,
   Thermometer,
   Settings,
-  Award
+  Award,
+  ShoppingCart,
+  Home as HomeIcon,
+  Building,
+  Factory
 } from 'lucide-react';
 import ImageBanner from '../components/ImageBanner';
 import SimpleLogoLoop from '../components/SimpleLogoLoop';
@@ -18,20 +22,20 @@ const Home = () => {
     {
       src: '/slide1.jpeg',
       alt: 'Instalação de Ar Condicionado',
-      title: 'Instalação Profissional',
-      caption: 'Serviços de instalação com garantia e qualidade'
+      title: 'Instalação Profissional de Climatização',
+      caption: 'Serviços especializados de instalação com garantia total e máxima qualidade técnica'
     },
     {
-      src: '/slide2.jpg', 
-      alt: 'Manutenção de Equipamentos',
-      title: 'Manutenção Especializada',
-      caption: 'Manutenção preventiva e corretiva para todos os tipos'
+      src: '/slide2.jpg',
+      alt: 'Manutenção Especializada',
+      title: 'Manutenção Técnica Especializada',
+      caption: 'Manutenção preventiva e corretiva completa para todos os tipos de equipamentos'
     },
     {
       src: '/slide3.jpg',
       alt: 'Projetos Personalizados',
-      title: 'Projetos Sob Medida',
-      caption: 'Soluções personalizadas para cada necessidade'
+      title: 'Projetos Personalizados Sob Medida',
+      caption: 'Soluções completas e personalizadas desenvolvidas para cada necessidade específica'
     }
   ];
 
@@ -111,14 +115,14 @@ const Home = () => {
       />
 
       {/* Client Logos Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-7xl md:text-8xl font-bold text-gray-900 mb-6">
               Nossos Clientes
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Empresas que confiam na Percusor para suas soluções de climatização
+            <p className="text-5xl md:text-6xl text-gray-700 mb-8 leading-relaxed">
+              Empresas que confiam na <span className="font-bold text-blue-600">Percusor</span> para suas soluções de climatização
             </p>
           </div>
           <SimpleLogoLoop
@@ -128,88 +132,65 @@ const Home = () => {
         </div>
       </section>
 
-
-      {/* Equipment Types Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Services Section */}
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Tipos de Equipamentos
+              Atendemos Todos os Segmentos
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Oferecemos soluções completas para todos os tipos de ambientes, 
-              desde residenciais até grandes projetos industriais.
+            <p className="text-xl text-gray-600">
+              Soluções personalizadas para cada tipo de ambiente
             </p>
           </div>
+          
+          <div className="grid grid-cols-3 gap-8">
+            
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {equipmentTypes.map((equipment, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8"
-              >
-                <div className="text-center mb-6">
-                  <div className="text-6xl mb-4">{equipment.image}</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {equipment.name}
-                  </h3>
-                  <p className="text-gray-600">
-                    {equipment.description}
-                  </p>
-                </div>
-                
-                <div className="space-y-3">
-                  {equipment.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="mt-6">
-                  <Link
-                    to="/contato"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
-                  >
-                    Solicitar Orçamento
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                </div>
+            {/* Residencial */}
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <HomeIcon className="w-16 h-16 text-gray-600" />
               </div>
-            ))}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Residencial
+              </h3>
+              <p className="text-base text-gray-600 mb-6">
+                Climatização para casas e apartamentos
+              </p>
+            </div>
+
+            {/* Comercial */}
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <Building className="w-16 h-16 text-gray-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Comercial
+              </h3>
+              <p className="text-base text-gray-600 mb-6">
+                Soluções para escritórios, lojas e estabelecimentos
+              </p>
+            </div>
+
+            {/* Industrial */}
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <Factory className="w-16 h-16 text-gray-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Industrial
+              </h3>
+              <p className="text-base text-gray-600 mb-6">
+                Sistemas robustos para indústrias e grandes complexos
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Thermometer className="w-16 h-16 mx-auto mb-6 text-blue-200" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para ter o clima ideal?
-          </h2>
-          <p className="text-xl mb-8">
-            Entre em contato conosco e receba um orçamento personalizado para seu projeto.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contato"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
-            >
-              Fale Conosco
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <a
-              href="tel:+5511999999999"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"
-            >
-              (11) 9999-9999
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

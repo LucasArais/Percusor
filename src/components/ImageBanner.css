@@ -60,21 +60,24 @@
 }
 
 .banner-caption h3 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .banner-caption p {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 1.25rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
 }
 
 .banner-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: transparent;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -85,11 +88,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  color: #333;
+  color: white;
 }
 
 .banner-nav:hover {
-  background: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.3);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -102,33 +105,7 @@
 }
 
 .banner-dots {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  z-index: 10;
-}
-
-.banner-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.banner-dot:hover {
-  border-color: rgba(255, 255, 255, 1);
-  transform: scale(1.2);
-}
-
-.banner-dot.active {
-  background: white;
-  border-color: white;
+  display: none;
 }
 
 .banner-placeholder {
@@ -167,10 +144,10 @@
   }
   
   .banner-caption h3 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
   
   .banner-caption p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 }
