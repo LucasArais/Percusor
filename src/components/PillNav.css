@@ -167,7 +167,7 @@
   width: var(--nav-h);
   height: var(--nav-h);
   border-radius: 50%;
-  background: var(--base, #000);
+  background: #111827;
   border: none;
   display: none;
   flex-direction: column;
@@ -188,7 +188,7 @@
 .hamburger-line {
   width: 16px;
   height: 2px;
-  background: var(--pill-bg, #fff);
+  background: #FFFFFF;
   border-radius: 1px;
   transition: all 0.01s ease;
   transform-origin: center;
@@ -196,16 +196,17 @@
 
 .mobile-menu-popover {
   position: absolute;
-  top: 3em;
+  top: 4.5em;
   left: 1rem;
   right: 1rem;
-  background: var(--base, #f0f0f0);
-  border-radius: 27px;
+  background: white;
+  border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   z-index: 998;
   opacity: 0;
   transform-origin: top center;
   visibility: hidden;
+  padding: 0.5rem;
 }
 
 .mobile-menu-list {
@@ -220,12 +221,12 @@
 .mobile-menu-popover .mobile-menu-link {
   display: block;
   padding: 12px 16px;
-  color: var(--pill-text, #fff);
-  background-color: var(--pill-bg, #fff);
+  color: #111827;
+  background-color: transparent;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  border-radius: 50px;
+  border-radius: 14px;
   transition: all 0.2s ease;
 }
 
@@ -248,5 +249,5 @@
 
 .mobile-menu-popover .mobile-menu-link:hover {
   cursor: pointer;
-  background-color: var(--base);
+  background-color: #f3f4f6;
 }
