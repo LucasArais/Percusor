@@ -17,7 +17,7 @@ function AppContent() {
     { label: 'Home', href: '/' },
     { label: 'Manutenção', href: '/manutencao' },
     { label: 'Projetos', href: '/projetos' },
-    { label: 'PMOC', href: '/pmoc' },
+    { label: 'Serviços', href: '/instação' },
     { label: 'Quem Somos', href: '/sobre' },
     { label: 'Blog', href: '/blog' }
   ];
@@ -42,7 +42,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/manutencao" element={<Manutencao />} />
           <Route path="/projetos" element={<Projetos />} />
-          <Route path="/pmoc" element={<PMOC />} />
+          <Route path="/instação" element={<PMOC />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contato" element={<Contato />} />
