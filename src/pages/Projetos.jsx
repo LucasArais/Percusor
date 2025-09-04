@@ -123,22 +123,6 @@ const Projetos = () => {
       <div>
         <ImageBanner images={bannerImages} autoPlay={true} interval={5000} />
       </div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Building2 className="w-16 h-16 mx-auto mb-6 text-purple-200" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Projetos Personalizados
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Desenvolvemos soluções sob medida para cada tipo de ambiente, 
-              garantindo máxima eficiência e conforto.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Project Types */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,19 +133,18 @@ const Projetos = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Atendemos todos os segmentos com soluções técnicas adequadas para cada necessidade.
             </p>
+            <br />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projectTypes.map((project, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-8">
-                <div className="flex items-center mb-6">
-                  <div className="bg-purple-100 p-3 rounded-lg text-purple-600 mr-4">
+                <div className="flex flex-col items-center mb-6">
+                  <div className="bg-purple-100 p-3 rounded-lg text-purple-600 mb-4">
                     {project.icon}
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
-                    <p className="text-gray-600">{project.description}</p>
-                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 text-center">{project.title}</h3>
+                  <p className="text-gray-600 text-center">{project.description}</p>
                 </div>
 
                 <div className="mb-6">
@@ -178,15 +161,10 @@ const Projetos = () => {
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">Exemplos de aplicação:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.examples.map((example, exampleIndex) => (
-                      <span 
-                        key={exampleIndex}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
-                      >
-                        {example}
-                      </span>
-                    ))}
+                  <div>
+                    <span className="text-gray-700 text-sm">
+                      {project.examples.join(' - ')}
+                    </span>
                   </div>
                 </div>
 
