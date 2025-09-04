@@ -6,7 +6,6 @@ import Manutencao from './pages/Manutencao';
 import Projetos from './pages/Projetos';
 import PMOC from './pages/PMOC';
 import Sobre from './pages/Sobre';
-import Blog from './pages/Blog';
 import Contato from './pages/Contato';
 import './App.css';
 
@@ -17,8 +16,7 @@ function AppContent() {
     { label: 'Home', href: '/' },
     { label: 'Manutenção', href: '/manutencao' },
     { label: 'Projetos', href: '/projetos' },
-    { label: 'Serviços', href: '/instação' },
-    { label: 'Blog', href: '/blog' }
+    { label: 'Serviços', href: '/instação' }
   ];
 
   return (
@@ -42,7 +40,6 @@ function AppContent() {
           <Route path="/manutencao" element={<Manutencao />} />
           <Route path="/projetos" element={<Projetos />} />
           <Route path="/instação" element={<PMOC />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>

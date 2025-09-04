@@ -193,17 +193,18 @@ const Home = () => {
       {/* Quem Somos Section */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-row items-start gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 max-w-5xl mx-auto">
             <img
               src="/2a47d988-f61d-4300-9905-c2cfed9cb331 (1).jpg"
               alt="Equipe Percusor"
-              className="rounded-xl object-cover shadow-md flex-shrink-0"
-              style={{ width: "15cm", height: "12cm", background: "#f3f4f6" }}
+              className="rounded-xl object-cover shadow-md flex-shrink-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-[265px] lg:h-[265px]"
+              style={{ background: "#f3f4f6" }}
             />
             <div className="flex-1 flex flex-col justify-center">
-              <p className="text-lg text-gray-700 text-justify max-w-2xl">
-                Quem Somos
-                <br /><br />
+              <div className="mb-2">
+               <br></br> 
+              </div>
+              <p className="text-lg text-gray-700 text-justify max-w-2xl leading-relaxed bg-gray-50 p-6 rounded-xl shadow">
                 A percusor Climatização é uma empresa líder em climatização de ambiente, atuando neste segmento de ar condicionado por longo período, está capacitada para oferecer aos nossos clientes soluções completas em climatização de ambientes, desde grandes projetos para indústrias, hospitais, hotéis, empresas de pequeno médio e grande porte, entre outros projetos ligados ao setor empresarial e público, mas não menos importante para atender nossos clientes que queiram conforto em seus lares com a Instalação de condicionadores de ar que abranjam menores capacidades e a climatização em pequenos ambientes, como também assistência técnica e manutenção de ar condicionado.
                 <br /><br />
                 Nossa missão final é a satisfação de nossos clientes, por isso a Arcool oferece melhores condições para compra, serviços personalizados, projetos para soluções e otimização, disponibilizando aos nossos clientes produtos dos melhores fabricantes, além de profissionais altamente qualificados prontos para atendê-lo e auxiliá-lo em seu projeto e atendimento pós-venda.
