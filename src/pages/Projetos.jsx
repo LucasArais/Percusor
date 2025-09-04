@@ -11,6 +11,28 @@ import {
   Award,
   Lightbulb
 } from 'lucide-react';
+import ImageBanner from '../components/ImageBanner';
+
+const bannerImages = [
+  {
+    src: '/slide1.jpeg',
+    alt: 'Instalação de Ar Condicionado',
+    title: 'Instalação Profissional de Climatização',
+    caption: 'Serviços especializados de instalação com garantia total e máxima qualidade técnica'
+  },
+  {
+    src: '/slide2.jpg',
+    alt: 'Manutenção Especializada',
+    title: 'Manutenção Técnica Especializada',
+    caption: 'Manutenção preventiva e corretiva completa para todos os tipos de equipamentos'
+  },
+  {
+    src: '/slide3.jpg',
+    alt: 'Projetos Personalizados',
+    title: 'Projetos Personalizados Sob Medida',
+    caption: 'Soluções completas e personalizadas desenvolvidas para cada necessidade específica'
+  }
+];
 
 const Projetos = () => {
   const projectTypes = [
@@ -97,6 +119,10 @@ const Projetos = () => {
 
   return (
     <div className="min-h-screen pt-20">
+      {/* Slide Show */}
+      <div>
+        <ImageBanner images={bannerImages} autoPlay={true} interval={5000} />
+      </div>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,111 +203,6 @@ const Projetos = () => {
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Como Desenvolvemos Seu Projeto
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nosso processo estruturado garante que você tenha a solução perfeita para suas necessidades.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {projectSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    {step.step}
-                  </div>
-                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto text-purple-600">
-                    {step.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Projetos Realizados
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Conheça alguns dos nossos projetos mais importantes e as soluções implementadas.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {portfolioProjects.map((project, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="p-8 text-center">
-                  <div className="text-6xl mb-4">{project.image}</div>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    {project.type}
-                  </span>
-                </div>
-                <div className="px-8 pb-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="space-y-2">
-                    {project.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center">
-                        <Award className="w-4 h-4 text-purple-500 mr-2 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Calendar className="w-16 h-16 mx-auto mb-6 text-purple-200" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para seu projeto personalizado?
-          </h2>
-          <p className="text-xl mb-8">
-            Agende uma consulta gratuita e receba um projeto sob medida para suas necessidades.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contato"
-              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
-            >
-              Agendar Consulta
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <a
-              href="tel:+5511999999999"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors inline-flex items-center justify-center"
-            >
-              (11) 9999-9999
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

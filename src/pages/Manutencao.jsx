@@ -11,6 +11,28 @@ import {
   Settings,
   ArrowRight
 } from 'lucide-react';
+import ImageBanner from '../components/ImageBanner';
+
+const bannerImages = [
+  {
+    src: '/slide1.jpeg',
+    alt: 'Instalação de Ar Condicionado',
+    title: 'Instalação Profissional de Climatização',
+    caption: 'Serviços especializados de instalação com garantia total e máxima qualidade técnica'
+  },
+  {
+    src: '/slide2.jpg',
+    alt: 'Manutenção Especializada',
+    title: 'Manutenção Técnica Especializada',
+    caption: 'Manutenção preventiva e corretiva completa para todos os tipos de equipamentos'
+  },
+  {
+    src: '/slide3.jpg',
+    alt: 'Projetos Personalizados',
+    title: 'Projetos Personalizados Sob Medida',
+    caption: 'Soluções completas e personalizadas desenvolvidas para cada necessidade específica'
+  }
+];
 
 const Manutencao = () => {
   const preventiveServices = [
@@ -32,18 +54,18 @@ const Manutencao = () => {
     {
       icon: <Shield className="w-6 h-6" />,
       title: 'Verificação Elétrica',
-      description: 'Inspeção de conexões elétricas e sistemas de segurança.'
+      description: 'Inspeção de conexões elétricas e sistemas de segurança.\n'
     }
   ];
 
   const correctiveServices = [
-    'Reparo de vazamentos de gás refrigerante',
-    'Substituição de compressores',
-    'Troca de placas eletrônicas',
-    'Reparo de motores ventiladores',
-    'Correção de problemas elétricos',
-    'Substituição de sensores',
-    'Reparo de válvulas expansoras',
+    'Reparo de vazamentos de gás refrigerante\n',
+    'Substituição de compressores\n',
+    'Troca de placas eletrônicas\n',
+    'Reparo de motores ventiladores\n',
+    'Correção de problemas elétricos\n',
+    'Substituição de sensores\n',
+    'Reparo de válvulas expansoras\n',
     'Correção de ruídos anômalos'
   ];
 
@@ -94,195 +116,91 @@ const Manutencao = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Wrench className="w-16 h-16 mx-auto mb-6 text-green-200" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Manutenção Preventiva e Corretiva
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Mantenha seu ar condicionado funcionando perfeitamente com nossos 
-              planos de manutenção especializados.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen pt-20 bg-site">
+      {/* Slide Show */}
+      <div className="mb-10">
+        <ImageBanner images={bannerImages} autoPlay={true} interval={5000} />
+      </div>
 
       {/* Preventive vs Corrective */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="py-10 bg-site">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Preventive Maintenance */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="text-center mb-8">
-                <Calendar className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col justify-center p-8">
+              <div className="flex flex-col items-center mb-6">
+                <Calendar className="w-12 h-12 text-green-600 mb-2" />
+                <h2 className="text-3xl font-extrabold text-green-700 mb-2 tracking-tight">
                   Manutenção Preventiva
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-base text-gray-700 mb-4 text-center">
                   Evite problemas antes que aconteçam com manutenções regulares programadas.
                 </p>
               </div>
-
-              <div className="space-y-6">
+              <ul className="mb-2 space-y-4">
                 {preventiveServices.map((service, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="bg-green-100 p-2 rounded-lg mr-4 text-green-600">
-                      {service.icon}
+                  <li key={index} className="flex flex-col items-center">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="bg-green-100 p-2 rounded-lg text-green-600">{service.icon}</span>
+                      <span className="font-semibold text-gray-900">{service.title}</span>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
+                    <span className="text-gray-600 text-sm">{service.description}</span>
+                  </li>
                 ))}
-              </div>
-
-              <div className="mt-8 p-4 bg-green-50 rounded-lg">
-                <h4 className="font-semibold text-green-800 mb-2">Benefícios:</h4>
-                <ul className="text-sm text-green-700 space-y-1">
-                  <li>• Maior vida útil do equipamento</li>
-                  <li>• Economia de energia</li>
-                  <li>• Menos quebras inesperadas</li>
-                  <li>• Melhor qualidade do ar</li>
-                </ul>
-              </div>
+              </ul>
+              <a
+                href="https://api.whatsapp.com/send?phone=5511978514196&text=Tenho%20interesse%20em%20manutencao%20preventiva"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 flex items-center gap-2 px-4 py-2 font-semibold rounded-full shadow transition w-fit mx-auto"
+                style={{ minWidth: 0, maxWidth: '220px', backgroundColor: 'rgb(185, 217, 235)', color: '#222' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                </svg>
+                Tenho interesse
+              </a>
             </div>
 
             {/* Corrective Maintenance */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="text-center mb-8">
-                <AlertTriangle className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col justify-center p-8">
+              <div className="flex flex-col items-center mb-6">
+                <AlertTriangle className="w-12 h-12 text-orange-600 mb-2" />
+                <h2 className="text-3xl font-extrabold text-orange-700 mb-2 tracking-tight">
                   Manutenção Corretiva
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-base text-gray-700 mb-4 text-center">
                   Reparos especializados para resolver problemas e restaurar o funcionamento.
                 </p>
               </div>
-
-              <div className="space-y-3">
-                <h3 className="font-semibold text-gray-900 mb-4">Serviços inclusos:</h3>
-                {correctiveServices.map((service, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{service}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 p-4 bg-orange-50 rounded-lg">
-                <h4 className="font-semibold text-orange-800 mb-2">Garantias:</h4>
-                <ul className="text-sm text-orange-700 space-y-1">
-                  <li>• Diagnóstico gratuito</li>
-                  <li>• Orçamento sem compromisso</li>
-                  <li>• Garantia de 90 dias nos reparos</li>
-                  <li>• Atendimento de emergência</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Maintenance Plans */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Planos de Manutenção
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Escolha o plano ideal para manter seu ar condicionado sempre funcionando perfeitamente.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {maintenancePlans.map((plan, index) => (
-              <div 
-                key={index}
-                className={`rounded-xl shadow-lg p-8 relative ${
-                  plan.popular 
-                    ? 'bg-gradient-to-b from-blue-50 to-white border-2 border-blue-200' 
-                    : 'bg-white border border-gray-200'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      Mais Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-baseline justify-center mb-4">
-                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-gray-600 ml-1">{plan.period}</span>
-                  </div>
-                  <p className="text-green-600 font-semibold">{plan.visits}</p>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+              <div className="mb-2">
+                <h3 className="font-semibold text-gray-900 mb-2 text-center">Serviços inclusos:</h3>
+                <ul className="space-y-6 text-gray-700">
+                  {correctiveServices.map((service, index) => (
+                    <li key={index} className="flex items-center gap-2 justify-center">
+                      <span className="text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span>{service.replace(/\n$/, '')}</span>
                     </li>
                   ))}
                 </ul>
-
-                <Link
-                  to="/contato"
-                  className={`w-full py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center ${
-                    plan.popular
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                  }`}
-                >
-                  Contratar Plano
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Emergency Service */}
-      <section className="py-20 bg-red-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AlertTriangle className="w-16 h-16 mx-auto mb-6 text-red-600" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Atendimento de Emergência
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Problemas urgentes? Nossa equipe está disponível 24 horas para atendimento de emergência.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+5511999999999"
-              className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors inline-flex items-center justify-center"
-            >
-              <Clock className="mr-2 w-5 h-5" />
-              Emergência 24h
-            </a>
-            <Link
-              to="/contato"
-              className="border-2 border-red-600 text-red-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-600 hover:text-white transition-colors inline-flex items-center justify-center"
-            >
-              Agendar Manutenção
-            </Link>
+              <a
+                href="https://api.whatsapp.com/send?phone=5511978514196&text=Tenho%20interesse%20em%20manutencao%20corretiva"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 flex items-center gap-2 px-4 py-2 font-semibold rounded-full shadow transition w-fit mx-auto"
+                style={{ minWidth: 0, maxWidth: '220px', backgroundColor: 'rgb(185, 217, 235)', color: '#222' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                </svg>
+                Tenho interesse
+              </a>
+            </div>
           </div>
         </div>
       </section>
