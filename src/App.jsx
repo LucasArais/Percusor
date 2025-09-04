@@ -18,7 +18,6 @@ function AppContent() {
     { label: 'Manutenção', href: '/manutencao' },
     { label: 'Projetos', href: '/projetos' },
     { label: 'Serviços', href: '/instação' },
-    { label: 'Quem Somos', href: '/sobre' },
     { label: 'Blog', href: '/blog' }
   ];
 
@@ -43,7 +42,6 @@ function AppContent() {
           <Route path="/manutencao" element={<Manutencao />} />
           <Route path="/projetos" element={<Projetos />} />
           <Route path="/instação" element={<PMOC />} />
-          <Route path="/sobre" element={<Sobre />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contato" element={<Contato />} />
         </Routes>
