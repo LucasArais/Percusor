@@ -195,7 +195,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 max-w-5xl mx-auto">
             <img
-              src="/2a47d988-f61d-4300-9905-c2cfed9cb331 (1).jpg"
+              src="/image.png"
               alt="Equipe Percusor"
               className="rounded-xl object-cover shadow-md flex-shrink-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-[265px] lg:h-[265px]"
               style={{ background: "#f3f4f6" }}
